@@ -1,0 +1,24 @@
+	body {font-family: Verdana, Arial, sans-serif;  font-size: 12px;}
+	table {
+		border-collapse: collapse;  
+		border: 1px solid gray; 
+		border-right: none; 
+		border-left: none;
+	}
+	td {
+		width: 140px; 
+		padding-top: 3px; padding-bottom: 3px; padding-right: 3px; padding-left: 3px; 
+		border-left: 1px solid gray; 
+		height:  25px;
+	}
+	.info {
+		background-color: #55b806; 
+		color: white; 
+	}
+	.odd-column {background-color: #ececd8;}
+	.first-row {border-left:none;}
+	img {
+		width: 25px; 
+		height: 25px;
+	}
+	.promoter {width: 85px;}
