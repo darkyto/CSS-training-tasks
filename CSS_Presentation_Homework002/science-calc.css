@@ -1,0 +1,179 @@
+		body {font-family: Calibri ,"Segoe UI","Times New Roman";}
+		section.main {
+			width: 450px; 
+			height: 424px;
+			border: 0px solid black;
+			color: #004;
+			background: rgb(224,243,250); /* Old browsers */
+			background: -moz-linear-gradient(-45deg,  rgba(224,243,250,1) 0%, rgba(216,240,252,1) 50%, rgba(184,226,246,1) 51%, rgba(182,223,253,1) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(224,243,250,1)), color-stop(50%,rgba(216,240,252,1)), color-stop(51%,rgba(184,226,246,1)), color-stop(100%,rgba(182,223,253,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(-45deg,  rgba(224,243,250,1) 0%,rgba(216,240,252,1) 50%,rgba(184,226,246,1) 51%,rgba(182,223,253,1) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(-45deg,  rgba(224,243,250,1) 0%,rgba(216,240,252,1) 50%,rgba(184,226,246,1) 51%,rgba(182,223,253,1) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(-45deg,  rgba(224,243,250,1) 0%,rgba(216,240,252,1) 50%,rgba(184,226,246,1) 51%,rgba(182,223,253,1) 100%); /* IE10+ */
+			background: linear-gradient(135deg,  rgba(224,243,250,1) 0%,rgba(216,240,252,1) 50%,rgba(184,226,246,1) 51%,rgba(182,223,253,1) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0f3fa', endColorstr='#b6dffd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		}
+		section.main img {
+			position: relative; 
+			top: 1%; 
+			left: 1%;
+		}
+		section.main span {
+			padding-left: 2%; 
+			padding-top: 0px;
+			text-shadow: 2px 2px 1px #FFF;
+			vertical-align: top;
+		}
+		section img.func-buttons {position: relative; top:0%; left: 53%;}
+		section.indesign {
+			width: 430px;
+			height: 390px;
+			border: 1px solid gray;
+			border-collapse: collapse;
+			position: relative; left: 2%;
+			background-color: #d9e4f1;
+		}
+		section.indesign nav {
+			word-spacing: 12px; 
+			padding-left: 6px;
+			width: 423px;
+			height: 20px;
+			border-bottom: 1px solid gray;
+			background: rgb(244,244,244); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(244,244,244,1) 0%, rgba(252,252,252,1) 8%, rgba(213,220,238,1) 50%, rgba(213,220,238,1) 79%, rgba(213,220,238,1) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(244,244,244,1)), color-stop(8%,rgba(252,252,252,1)), color-stop(50%,rgba(213,220,238,1)), color-stop(79%,rgba(213,220,238,1)), color-stop(100%,rgba(213,220,238,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(244,244,244,1) 0%,rgba(252,252,252,1) 8%,rgba(213,220,238,1) 50%,rgba(213,220,238,1) 79%,rgba(213,220,238,1) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(244,244,244,1) 0%,rgba(252,252,252,1) 8%,rgba(213,220,238,1) 50%,rgba(213,220,238,1) 79%,rgba(213,220,238,1) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(244,244,244,1) 0%,rgba(252,252,252,1) 8%,rgba(213,220,238,1) 50%,rgba(213,220,238,1) 79%,rgba(213,220,238,1) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(244,244,244,1) 0%,rgba(252,252,252,1) 8%,rgba(213,220,238,1) 50%,rgba(213,220,238,1) 79%,rgba(213,220,238,1) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#d5dcee',GradientType=0 ); /* IE6-9 */
+
+		}
+		section.indesign a {
+			text-decoration: none; 
+			color:black; 
+			font-size: 14px;
+		}
+		section.indesign a:hover{
+			background-color: lightblue; 
+			border: 1px solid gray;
+		}
+		.display {padding-top: 2%;}
+		input.right-aling {
+			position: relative; left:2%; 
+			text-align: right; 
+			width: 94%; 
+			font-size: 28px; 
+			font-family: Consolas, Calibri ,"Segoe UI","Times New Roman";
+			padding-top: 20px; padding-right: 5px; padding-bottom: 5px;
+			border: 1px solid gray; border-radius: 4px;
+			background: rgb(213,220,238); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(213,220,238,1) 0%, rgba(213,220,238,1) 0%, rgba(213,220,238,1) 0%, rgba(213,220,238,1) 0%, rgba(244,244,244,1) 0%, rgba(213,220,238,1) 2%, rgba(213,220,238,1) 2%, rgba(213,220,238,1) 3%, rgba(213,220,238,1) 3%, rgba(213,220,238,1) 3%, rgba(213,220,238,1) 4%, rgba(213,220,238,1) 4%, rgba(213,220,238,1) 4%, rgba(213,220,238,1) 4%, rgba(213,220,238,1) 5%, rgba(213,220,238,1) 6%, rgba(252,252,252,1) 61%, rgba(252,252,252,1) 79%, rgba(252,252,252,1) 91%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(213,220,238,1)), color-stop(0%,rgba(213,220,238,1)), color-stop(0%,rgba(213,220,238,1)), color-stop(0%,rgba(213,220,238,1)), color-stop(0%,rgba(244,244,244,1)), color-stop(2%,rgba(213,220,238,1)), color-stop(2%,rgba(213,220,238,1)), color-stop(3%,rgba(213,220,238,1)), color-stop(3%,rgba(213,220,238,1)), color-stop(3%,rgba(213,220,238,1)), color-stop(4%,rgba(213,220,238,1)), color-stop(4%,rgba(213,220,238,1)), color-stop(4%,rgba(213,220,238,1)), color-stop(4%,rgba(213,220,238,1)), color-stop(5%,rgba(213,220,238,1)), color-stop(6%,rgba(213,220,238,1)), color-stop(61%,rgba(252,252,252,1)), color-stop(79%,rgba(252,252,252,1)), color-stop(91%,rgba(252,252,252,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(244,244,244,1) 0%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 5%,rgba(213,220,238,1) 6%,rgba(252,252,252,1) 61%,rgba(252,252,252,1) 79%,rgba(252,252,252,1) 91%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(244,244,244,1) 0%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 5%,rgba(213,220,238,1) 6%,rgba(252,252,252,1) 61%,rgba(252,252,252,1) 79%,rgba(252,252,252,1) 91%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(244,244,244,1) 0%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 5%,rgba(213,220,238,1) 6%,rgba(252,252,252,1) 61%,rgba(252,252,252,1) 79%,rgba(252,252,252,1) 91%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(244,244,244,1) 0%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 5%,rgba(213,220,238,1) 6%,rgba(252,252,252,1) 61%,rgba(252,252,252,1) 79%,rgba(252,252,252,1) 91%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5dcee', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-9 */
+		}
+		.binary {			
+			position: relative; left:2%; top:2%;
+			text-align: left; 
+			width: 94%; 
+			font-size: 14px; 
+			font-family: Consolas, Calibri ,"Segoe UI","Times New Roman";
+			padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px;
+			border: 1px solid gray; border-radius: 4px;
+		}
+
+		table {width: 100%; position: relative; left: 2%;}
+		td.right-binary {text-align: right; position: relative; right: 5%;}
+
+		input[type="radio"] {
+		    background-color: #FFF;
+		}
+		input[type="radio"]:after {
+		    background-color: #FFF;
+		}
+		input[type="radio"]:checked:after {
+		    background-color: #FFF;
+		}
+
+		section.conventers {
+			position: relative; left: 2%; top: 4%;
+			border: 1px solid gray; border-radius: 4px;
+			width: 17%;
+			height: 92px;
+		}
+		section.conventers fieldset {
+			font-family: "Segoe UI"; font-size: 12px;
+			border: none;
+			padding-left: 2%; padding-top:8%;
+		}
+		section.words {
+			position: relative; left: 2%; top: 6%;
+			border: 1px solid gray; border-radius: 4px;
+			width: 17%;
+			height: 92px;
+		}
+		section.words fieldset {
+			font-family: "Segoe UI"; font-size: 12px;
+			border: none;
+			padding-left: 2%; padding-top:8%;
+		}
+		section.buttons {
+			position: absolute; left: 12%; top:38%;
+			width: 10%;
+			height: 46%;
+		}
+		section.buttons ul {list-style: none;}
+		section.buttons li {padding-top: 6px;}
+		section.buttons input[type="button"] {
+			width: 34px;
+			height: 28px;
+			background-color: #d9e4f1;
+			border: 1px solid gray;
+			text-align: center;
+			font-size: 11px;
+			padding-right: 3px;
+			padding-left:3px;
+			padding-top: 7px; 
+			padding-bottom: 7px;
+		}
+		section.zero-button ul {list-style: none;}
+		section.zero-button input[type="button"] {
+			width: 76px;
+			height: 28px;
+			background-color: #d9e4f1;
+			border: 1px solid gray;
+			text-align: center;
+			font-size: 14px;
+			padding-right: 3px;
+			padding-left:3px;
+			padding-top: 7px; padding-bottom: 7px;
+		}
+		section.equal-button input[type="button"] {
+			width: 34px;
+			height: 63px;
+			background-color: #d9e4f1;
+			border: 1px solid gray;
+			text-align: center;
+			font-size: 24px;
+			padding-right: 3px;
+			padding-left:3px;
+			padding-top: 7px; padding-bottom: 7px;
+		}
+		section input[type="button"]:hover{
+			background-color: orange;
+		}
+		section.equal-button ul {list-style: none;}
+		.first-row {position: absolute; left: 0%; top:5%; font-family: Consolas;}
+		.second-row {position: absolute; left: 98%; top:5%; font-family: Consolas;}
+		.third-row {position: absolute; left: 196%; top:5%; font-family: Consolas;}
+		.forth-row {position: absolute; left: 294%; top:5%; font-family: Consolas;}
+		.fifth-row {position: absolute; left: 392%; top:5%; font-family: Consolas;}
+		.sixth-row {position: absolute; left: 490%; top:5%; font-family: Consolas;}
+		.seventh-row {position: absolute; left: 588%; top:5%; font-family: Consolas;}
+		.eight-row {position: absolute; left: 686%; top:5%; font-family: Consolas;}
+		.zero {position: absolute; left: 51%; top:350px}
+		.equal {position: absolute; left: 90%; top:81%;}
