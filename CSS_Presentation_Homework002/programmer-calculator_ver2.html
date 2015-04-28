@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Programmer Calculator</title>
+	<style type="text/css">
+		body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, input, textarea, blockquote {
+			margin: 0; padding: 0; border: 0;
+		}
+		body {
+			font-family: Calibri ,"Segoe UI","Times New Roman";
+			background: #fff;
+			font-size: 14px;
+		}
+		section.main {
+			width: 450px; 
+			height: 400px;
+			color: #004;
+			background: rgb(224,243,250); /* Old browsers */
+			background: -moz-linear-gradient(-45deg,  rgba(224,243,250,1) 0%, rgba(216,240,252,1) 50%, rgba(184,226,246,1) 51%, rgba(182,223,253,1) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(224,243,250,1)), color-stop(50%,rgba(216,240,252,1)), color-stop(51%,rgba(184,226,246,1)), color-stop(100%,rgba(182,223,253,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(-45deg,  rgba(224,243,250,1) 0%,rgba(216,240,252,1) 50%,rgba(184,226,246,1) 51%,rgba(182,223,253,1) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(-45deg,  rgba(224,243,250,1) 0%,rgba(216,240,252,1) 50%,rgba(184,226,246,1) 51%,rgba(182,223,253,1) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(-45deg,  rgba(224,243,250,1) 0%,rgba(216,240,252,1) 50%,rgba(184,226,246,1) 51%,rgba(182,223,253,1) 100%); /* IE10+ */
+			background: linear-gradient(135deg,  rgba(224,243,250,1) 0%,rgba(216,240,252,1) 50%,rgba(184,226,246,1) 51%,rgba(182,223,253,1) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0f3fa', endColorstr='#b6dffd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */	
+		}
+		img.calc {
+			position: relative; top: 1%; left: 2%;
+		}
+		span.heading {
+			padding: 1em;
+			text-shadow: 2px 2px 1px #FFF;
+		}
+		section img.func-buttons {position: relative; top:0%; left: 50%;}
+
+		section.indesign {
+			width: 96%;
+			height: 366px;
+			border: 1px solid #A4B4CA;
+			border-collapse: collapse;
+			position: relative; left: 2%;
+			background-color: #d9e4f1;
+		}
+
+		section.indesign nav {
+			word-spacing: 6px; 
+			padding-left: 2%;
+			width: 98%;
+			height: 20px;
+			border-bottom: 1px solid #A4B4CA;
+			background: rgb(244,244,244); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(244,244,244,1) 0%, rgba(252,252,252,1) 8%, rgba(213,220,238,1) 50%, rgba(213,220,238,1) 79%, rgba(213,220,238,1) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(244,244,244,1)), color-stop(8%,rgba(252,252,252,1)), color-stop(50%,rgba(213,220,238,1)), color-stop(79%,rgba(213,220,238,1)), color-stop(100%,rgba(213,220,238,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(244,244,244,1) 0%,rgba(252,252,252,1) 8%,rgba(213,220,238,1) 50%,rgba(213,220,238,1) 79%,rgba(213,220,238,1) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(244,244,244,1) 0%,rgba(252,252,252,1) 8%,rgba(213,220,238,1) 50%,rgba(213,220,238,1) 79%,rgba(213,220,238,1) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(244,244,244,1) 0%,rgba(252,252,252,1) 8%,rgba(213,220,238,1) 50%,rgba(213,220,238,1) 79%,rgba(213,220,238,1) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(244,244,244,1) 0%,rgba(252,252,252,1) 8%,rgba(213,220,238,1) 50%,rgba(213,220,238,1) 79%,rgba(213,220,238,1) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#d5dcee',GradientType=0 ); /* IE6-9 */
+
+		}
+		section.indesign nav a {
+			text-decoration: none; 
+			color:#000; 
+		}
+		section.indesign nav a:first-letter {
+			text-decoration: underline;
+		}
+		section.indesign nav a:hover{
+			background-color: #ABBBD0; 
+		}
+		div.display {
+			padding-top:0.5em; 
+			padding-left: 0.5em;
+		}
+		input.right-align {
+			text-align: right; 
+			width: 96%; 
+			font-size: 28px; 
+			font-family: Consolas, Calibri ,"Segoe UI","Times New Roman";
+			padding-top: 20px; padding-right: 5px; padding-bottom: 5px;
+			border: 1px solid #A4B4CA; border-radius: 4px;
+			background: rgb(213,220,238); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(213,220,238,1) 0%, rgba(213,220,238,1) 0%, rgba(213,220,238,1) 0%, rgba(213,220,238,1) 0%, rgba(244,244,244,1) 0%, rgba(213,220,238,1) 2%, rgba(213,220,238,1) 2%, rgba(213,220,238,1) 3%, rgba(213,220,238,1) 3%, rgba(213,220,238,1) 3%, rgba(213,220,238,1) 4%, rgba(213,220,238,1) 4%, rgba(213,220,238,1) 4%, rgba(213,220,238,1) 4%, rgba(213,220,238,1) 5%, rgba(213,220,238,1) 6%, rgba(252,252,252,1) 61%, rgba(252,252,252,1) 79%, rgba(252,252,252,1) 91%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(213,220,238,1)), color-stop(0%,rgba(213,220,238,1)), color-stop(0%,rgba(213,220,238,1)), color-stop(0%,rgba(213,220,238,1)), color-stop(0%,rgba(244,244,244,1)), color-stop(2%,rgba(213,220,238,1)), color-stop(2%,rgba(213,220,238,1)), color-stop(3%,rgba(213,220,238,1)), color-stop(3%,rgba(213,220,238,1)), color-stop(3%,rgba(213,220,238,1)), color-stop(4%,rgba(213,220,238,1)), color-stop(4%,rgba(213,220,238,1)), color-stop(4%,rgba(213,220,238,1)), color-stop(4%,rgba(213,220,238,1)), color-stop(5%,rgba(213,220,238,1)), color-stop(6%,rgba(213,220,238,1)), color-stop(61%,rgba(252,252,252,1)), color-stop(79%,rgba(252,252,252,1)), color-stop(91%,rgba(252,252,252,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(244,244,244,1) 0%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 5%,rgba(213,220,238,1) 6%,rgba(252,252,252,1) 61%,rgba(252,252,252,1) 79%,rgba(252,252,252,1) 91%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(244,244,244,1) 0%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 5%,rgba(213,220,238,1) 6%,rgba(252,252,252,1) 61%,rgba(252,252,252,1) 79%,rgba(252,252,252,1) 91%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(244,244,244,1) 0%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 5%,rgba(213,220,238,1) 6%,rgba(252,252,252,1) 61%,rgba(252,252,252,1) 79%,rgba(252,252,252,1) 91%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(213,220,238,1) 0%,rgba(244,244,244,1) 0%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 2%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 3%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 4%,rgba(213,220,238,1) 5%,rgba(213,220,238,1) 6%,rgba(252,252,252,1) 61%,rgba(252,252,252,1) 79%,rgba(252,252,252,1) 91%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5dcee', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-9 */
+		}
+		div.display ul {
+			list-style: none;
+			display: inline-table;
+			padding-left: 2em;
+		}
+		div.display ul li {
+			float: left;
+			display: inline;
+			padding-left: 0.7em;
+			width: 2.9em;
+		}
+		ul.binary {		
+			position: relative; top:0.5em;
+			text-align: left; 
+			width: 97%; 
+			font-size: 1em; 
+			font-family: Consolas, Calibri ,"Segoe UI","Times New Roman";
+			border: 1px solid #A4B4CA; border-radius: 4px;
+		}
+		ul.binary li:nth-child(16) {
+			text-align: right; 
+			position: relative; right: 0.8em;
+		}
+		ul.binary li:nth-child(32) {
+			text-align: right; 
+			position: relative; right: 0.8em;
+		}
+		span.conventers {
+			padding-left: 0.5em;
+			padding-top: 0.7em;
+			width: 76px;
+			display: block;
+		}
+		span.conventers fieldset {
+			display:block;
+			height: 6.6em;
+			font-family: "Segoe UI"; font-size: 12px;
+			border: 1px solid #A4B4CA; border-radius: 4px;
+			padding-top: 5px; padding-bottom: 5px; padding-left: 5px;
+		}
+		span.conventers fieldset input[type=radio] { margin: 3px; }
+		span.words {
+			padding-top: 6px;
+		}
+		span.buttons {
+			position: absolute; top:167px; left:84px;
+			width: 340px;
+		}
+		span.buttons ul {
+			list-style: none;
+		}
+		span.buttons ul li {
+			float: left;
+			padding-left: 6px; padding-top: 4px;
+		}
+		span.buttons ul li button {
+			width: 36px;
+			height: 28px;
+			background-color: #d9e4f1;
+			border: 1px solid #A4B4CA; border-radius: 4px;
+			text-align: center;
+			font-size: 11px;
+			padding-right: 3px;
+			padding-left:3px;
+			padding-top: 7px; 
+			padding-bottom: 7px;
+			color:#004;
+		}
+		span.buttons ul li button:hover {
+background: rgb(255,250,244); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,250,244,1) 18%, rgba(251,210,122,1) 67%, rgba(251,210,122,1) 76%, rgba(255,252,249,1) 99%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(18%,rgba(255,250,244,1)), color-stop(67%,rgba(251,210,122,1)), color-stop(76%,rgba(251,210,122,1)), color-stop(99%,rgba(255,252,249,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,250,244,1) 18%,rgba(251,210,122,1) 67%,rgba(251,210,122,1) 76%,rgba(255,252,249,1) 99%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,250,244,1) 18%,rgba(251,210,122,1) 67%,rgba(251,210,122,1) 76%,rgba(255,252,249,1) 99%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,250,244,1) 18%,rgba(251,210,122,1) 67%,rgba(251,210,122,1) 76%,rgba(255,252,249,1) 99%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,250,244,1) 18%,rgba(251,210,122,1) 67%,rgba(251,210,122,1) 76%,rgba(255,252,249,1) 99%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffaf4', endColorstr='#fffcf9',GradientType=0 ); /* IE6-9 */
+
+		}
+		span.buttons button.equal {
+			width: 34px;
+			height: 63px;
+			float: left;
+		}
+
+		span.buttons-last {
+			position: absolute; top:327px; left:84px;
+			width: 340px;
+		}
+		span.buttons-last ul {
+			list-style: none;
+		}
+		span.buttons-last ul li {
+			float: left;
+			padding-left: 6px; padding-top: 4px;
+		}
+		span.buttons-last ul li button {
+			width: 36px;
+			height: 28px;
+			background-color: #d9e4f1;
+			border: 1px solid #A4B4CA; border-radius: 4px;
+			text-align: center;
+			font-size: 11px;
+			padding-right: 3px;
+			padding-left:3px;
+			padding-top: 7px; 
+			padding-bottom: 7px;
+			color:#004;
+		}
+		span.buttons-last ul li button:hover {
+			background: rgb(255,250,244); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,250,244,1) 18%, rgba(251,210,122,1) 67%, rgba(251,210,122,1) 76%, rgba(255,252,249,1) 99%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(18%,rgba(255,250,244,1)), color-stop(67%,rgba(251,210,122,1)), color-stop(76%,rgba(251,210,122,1)), color-stop(99%,rgba(255,252,249,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,250,244,1) 18%,rgba(251,210,122,1) 67%,rgba(251,210,122,1) 76%,rgba(255,252,249,1) 99%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,250,244,1) 18%,rgba(251,210,122,1) 67%,rgba(251,210,122,1) 76%,rgba(255,252,249,1) 99%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,250,244,1) 18%,rgba(251,210,122,1) 67%,rgba(251,210,122,1) 76%,rgba(255,252,249,1) 99%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,250,244,1) 18%,rgba(251,210,122,1) 67%,rgba(251,210,122,1) 76%,rgba(255,252,249,1) 99%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffaf4', endColorstr='#fffcf9',GradientType=0 ); /* IE6-9 */
+
+		}
+		span.buttons-last button.equal {
+			width: 34px;
+			height: 60px;
+			float: left;
+			position: absolute; top:-88%;
+			text-transform: capitalize;
+			font-size: 24px;
+		}
+		li.zero {
+			width: 78px;
+			height: 28px;
+		}
+		#zero-button {
+			width: 78px;
+			font-family: Consolas;
+			font-size: 18px;
+			padding-top: 3px; padding-right: 2px; padding-bottom: 3px; padding-left: 2px;
+		}
+		#capitals {
+			font-family: Consolas;
+			font-size: 18px;
+			padding-top: 3px; padding-right: 2px; padding-bottom: 3px; padding-left: 2px;
+		}
+		.func-buttons {
+			background: rgb(255,255,255); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(215,226,240,1) 48%, rgba(215,226,240,1) 48%, rgba(215,226,240,1) 55%, rgba(215,226,240,1) 83%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(48%,rgba(215,226,240,1)), color-stop(48%,rgba(215,226,240,1)), color-stop(55%,rgba(215,226,240,1)), color-stop(83%,rgba(215,226,240,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(215,226,240,1) 48%,rgba(215,226,240,1) 48%,rgba(215,226,240,1) 55%,rgba(215,226,240,1) 83%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(215,226,240,1) 48%,rgba(215,226,240,1) 48%,rgba(215,226,240,1) 55%,rgba(215,226,240,1) 83%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(215,226,240,1) 48%,rgba(215,226,240,1) 48%,rgba(215,226,240,1) 55%,rgba(215,226,240,1) 83%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(215,226,240,1) 48%,rgba(215,226,240,1) 48%,rgba(215,226,240,1) 55%,rgba(215,226,240,1) 83%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d7e2f0',GradientType=0 );
+		}
+		.num-buttons {
+			background: rgb(255,255,255); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(255,255,255,1) 26%, rgba(215,226,240,1) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(26%,rgba(255,255,255,1)), color-stop(100%,rgba(215,226,240,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 26%,rgba(215,226,240,1) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(255,255,255,1) 26%,rgba(215,226,240,1) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(255,255,255,1) 26%,rgba(215,226,240,1) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(255,255,255,1) 26%,rgba(215,226,240,1) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d7e2f0',GradientType=0 ); /* IE6-9 */
+		
+		}
+	</style>
+</head>
+<body>
+	<section class="main">
+		<img src="images/calc-thumb.png" alt="miniature calculator" class="calc"/>
+		<span class="heading">Calculator</span>
+		<img src="images/func-buttons.png" alt="function buttons" class="func-buttons" usemap="#Map" />
+		<map name="Map" id="Map">
+			<area alt="minimaze" title="min" href="#" shape="rect" coords="3,0,32,19" />
+			<area alt="maximaze" title="max" href="#" shape="rect" coords="36,1,60,20" />
+			<area alt="close window" title="close" href="#" shape="rect" coords="67,1,107,19" />
+		</map>
+		<section class="indesign">
+			<nav>
+				<a href="#"><u>V</u>iew</a>
+				<a href="#"><u>E</u>dit</a>
+				<a href="#"><u>H</u>elp</a>
+			</nav>	
+			<div class="display">
+				<form>
+					<input type="text" size="55" value="88855456" class="right-align" />
+				</form>
+				<ul class="binary">
+					<li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li>
+					<li>63</li><li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li><li>47</li><li>&nbsp;</li><li>&nbsp;</li><li>32</li>
+					<li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li>
+					<li>31</li><li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li><li>15</li><li>&nbsp;</li><li>&nbsp;</li><li>0</li>
+				</ul>
+			</div>
+
+			<span class="conventers">
+				<fieldset>
+					<form>
+						<input type="radio" name="conventers" value="Hex" >Hex<br/>
+						<input type="radio" name="conventers" value="Dec" checked>Dec<br/>
+						<input type="radio" name="conventers" value="Oct" >Oct<br/>
+						<input type="radio" name="conventers" value="Bin" >Bin<br/>
+					</form>
+				</fieldset>
+			</span>
+			<span class="words conventers">
+				<fieldset>
+					<form>
+						<input type="radio" name="words" value="Qword" >Qword<br/>
+						<input type="radio" name="words" value="Dword" checked>Dword<br/>
+						<input type="radio" name="words" value="Word" >Word<br/>
+						<input type="radio" name="words" value="Byte" >Byte<br/>
+					</form>
+				</fieldset>
+			</span>
+
+			<span class="buttons">
+				<ul>
+					<li><button type="button" value="" disabled>&nbsp;</button></li>
+					<li><button type="button" value="Mod" class="func-buttons">Mod</button></li>
+					<li><button type="button" value="A" id="capitals">A</button></li>
+					<li><button type="button" value="MC">MC</button></li>
+					<li><button type="button" value="MR">MR</button></li>
+					<li><button type="button" value="MS">MS</button></li>
+					<li><button type="button" value="M+">M+</button></li>
+					<li><button type="button" value="M-">M-</button></li>
+
+					<li><button type="button" value="(" class="func-buttons">(</button></li>
+					<li><button type="button" value=")" class="func-buttons">)</button></li>
+					<li><button type="button" value="B" id="capitals">B</button></li>
+					<li><button type="button" value="&#8592;" class="func-buttons"  id="capitals">&#8592;</button></li>
+					<li><button type="button" value="CE" class="func-buttons">CE</button></li>
+					<li><button type="button" value="C" class="func-buttons">C</button></li>
+					<li><button type="button" value="&#177;" class="func-buttons">&#177;</button></li>
+					<li><button type="button" value="&#8730;">&#8730;</button></li>
+
+					<li><button type="button" value="Rol" class="func-buttons">Rol</button></li>
+					<li><button type="button" value="Ror" class="func-buttons">Ror</button></li>
+					<li><button type="button" value="C" id="capitals">C</button></li>
+					<li><button type="button" value="7" class="num-buttons" id="capitals">7</button></li>
+					<li><button type="button" value="8" class="num-buttons" id="capitals">8</button></li>
+					<li><button type="button" value="9" class="num-buttons" id="capitals">9</button></li>
+					<li><button type="button" value="/" class="func-buttons">/</button></li>
+					<li><button type="button" value="%">%</button></li>
+
+					<li><button type="button" value="Or" class="func-buttons">Or</button></li>
+					<li><button type="button" value="Xor" class="func-buttons">Xor</button></li>
+					<li><button type="button" value="D" id="capitals">D</button></li>
+					<li><button type="button" value="4" class="num-buttons" id="capitals">4</button></li>
+					<li><button type="button" value="5" class="num-buttons" id="capitals">5</button></li>
+					<li><button type="button" value="6" class="num-buttons" id="capitals">6</button></li>
+					<li><button type="button" value="*" class="func-buttons">*</button></li>
+					<li><button type="button" value="1/x">1/x</button></li>
+
+					<li><button type="button" value="Lsh" class="func-buttons">Lsh</button></li>
+					<li><button type="button" value="Rsh" class="func-buttons">Rsh</button></li>
+					<li><button type="button" value="e" id="capitals">E</button></li>
+					<li><button type="button" value="1" class="num-buttons" id="capitals">1</button></li>
+					<li><button type="button" value="2" class="num-buttons" id="capitals">2</button></li>
+					<li><button type="button" value="3" class="num-buttons" id="capitals">3</button></li>
+					<li><button type="button" value="-" class="func-buttons">-</button></li>
+
+				</ul>
+			</span>
+			
+			<span class="buttons-last">
+				<ul>
+
+					<li><button type="button" value="Not" class="func-buttons">Not</button></li>
+					<li><button type="button" value="And" class="func-buttons">And</button></li>
+					<li><button type="button" value="F" id="capitals">F</button></li>
+					<li class="zero"><button type="button" class="num-buttons" value="0" id="zero-button">0</button></li>
+					<li><button type="button" value="." disabled>.</button></li>
+					<li><button type="button" value="+" class="func-buttons" id="capitals">+</button></li>
+
+					<li><button type="button" value="=" class="equal func-buttons">=</button></li>
+				</ul>
+			</span>
+		</section>
+	</section>
+</body>
+</html>
