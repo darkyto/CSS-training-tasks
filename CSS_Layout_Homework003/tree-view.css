@@ -1,0 +1,85 @@
+		body, div, h1, form, fieldset, input, textarea {
+			margin: 0; padding: 0; border: 0; outline: none;
+		}
+		header h3 {
+			font-family: Calibri; 
+			font-size: 24px;
+			padding-left: 3%;
+			color: #293861;
+		}
+		nav {
+			margin-left: 100px;
+		}
+		nav ul ul {
+			display: none;
+		}
+		nav ul li:hover > ul {
+			display: block;
+			position: relative; left: 140px;
+			border: 3px solid #FADE89;
+		}
+		nav ul {
+			background: #B9C7C9; 
+			background: linear-gradient(top, #B9C7C9 0%, #bbbbbb 400%);  
+			background: -moz-linear-gradient(top, #B9C7C9 0%, #bbbbbb 70%); 
+			background: -webkit-linear-gradient(top, #B9C7C9 0%,#bbbbbb 80%); 
+			box-shadow: 0px 0px 10px rgba(20,0,0,20.15);
+			padding: 0px 0px;
+			border: 7px solid #FADE89;
+			border-radius: 15px;  
+			list-style: none;
+			position: relative;
+			display: inline-table;
+			font-family: Calibri; 
+			font-size: 18px;
+		}
+		nav ul:after {
+			content: ""; 
+			clear: both; 
+			display: block;
+		}
+		nav ul li {
+			float: none;
+		}
+		nav ul li:hover {
+			background: #293861;
+			background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
+			background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+			background: -webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%);
+			border-radius: 15px;  
+		}
+		nav ul li:hover a {
+			color: #fff;
+		}
+		nav ul li a {
+			display: block; 
+			padding: 10px 20px;
+			color: #293861; 
+			font-weight: bold;
+			text-decoration: none;
+		}
+		nav ul ul {
+			background: #5f6975; 
+			border-radius: 15px; 
+			padding: 0px;
+			position: absolute; 
+			top: 90%;
+		}
+		nav ul ul li {
+			float: none; 
+			border-top: 3px solid #6b727c;
+			border-bottom: 3px solid #575f6a;
+			border-radius: 25px;  
+			position: relative;
+		}
+		nav ul ul li a {
+			padding: 8px 20px;
+			color: #fff;
+		}	
+		nav ul ul li a:hover {
+			background: #4b545f;
+			border-radius: 15px;  
+		}
+		nav ul ul ul {
+			position: absolute; left: 95%; top:0;
+		}

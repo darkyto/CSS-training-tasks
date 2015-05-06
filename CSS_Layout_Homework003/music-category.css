@@ -1,0 +1,103 @@
+	body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, input, textarea, blockquote {
+			margin: 0; padding: 0; border: 0;
+		}
+	body {
+		font-family: Calibri; 
+		font-size: 18px;
+	}
+	section.main {
+		margin-left: 100px; margin-top: 40px;
+		width: 421px;
+		height: 528px;
+		background-color: #EEEEEE;
+		padding-top: 1em;
+		padding-left: 0.8em;
+	}
+	div.categories {
+		width: 407px;
+		height: 442px;
+		background-color: #EEEEEE;
+		position: relative; top: 5%;
+		margin: 0px;
+	}
+	div.categories div.cell {
+		width: 406px;
+		height: 120px;
+		background-color: #FFF;
+		border: 1px solid gray;		
+	}
+	#someid div:not(:first-of-type) {
+      	margin-top: 2em;	
+	}
+	div.cell img:first-of-type {
+		width: 136px;
+		height: 88px;
+		border: 1px solid gray;
+		margin: 0.8em;
+		display: inline;
+	}
+	div.cell div {
+		font-size: 16px;
+		position: relative; top: 0.75em;
+		line-height: 95%;
+	}
+	div.cell span {
+		font-weight: bold;
+	}
+
+	div.cell span.buttons {
+		display: block;
+		position: relative; 
+		left: 20%; top:30%;
+	}
+	div.cell span img:nth-child(1) {
+		width: 76px;
+		height: 24px;
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+	div.cell span img:nth-child(2) {
+		width: 62px;
+		height: 25px;
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+	.upper-buttons {
+		display: block;
+		position: relative;
+		left: 20%; top:16%;
+	}
+	.buttons .butt-listen {
+		position:absolute;
+    	width:30px;
+    	font-family: Calibri;
+    	font-size: 16px; color: #FFF;
+    	left:46%; top:0.4em;
+    	z-index:+1;
+	}
+	.buttons .butt-add {
+		position:absolute;
+		left:16.5em; top:-1.6em;
+    	width:30px;
+    	font-family: Calibri;
+    	font-size: 16px; color: #FFF;
+    	z-index:+1;
+	}
+	.upper-buttons .butt-listen {
+		position:absolute;
+    	width:48px;
+    	font-family: Calibri;
+    	font-size: 16px; color: #FFF;
+    	left:46%; top:0.4em;
+    	z-index:+1;
+	}
+	.upper-buttons .butt-add {
+		position:absolute;
+		left:16.5em; top:-1.6em;
+    	width:48px;
+    	font-family: Calibri;
+    	font-size: 16px; color: #FFF;
+    	z-index:+1;
+	}

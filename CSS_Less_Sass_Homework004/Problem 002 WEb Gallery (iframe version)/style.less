@@ -1,0 +1,57 @@
+@transperant-border : 5px solid #FFF;
+@bold-border:5px solid #545453;
+@border-radius : 8px;
+@main-fonts :  Consolas, "Lucida Console", sans-serif;
+div {
+	display: inline-table;
+	float: left;
+	background-color: #fff;
+	#main {
+		width: 1000px;
+		height: 800px;
+		font-family: @main-fonts;
+	}
+	.img {
+		margin: 2px;
+		padding: 2px;
+		border: @transperant-border; border-radius: @border-radius;
+		height: auto;
+		width: 10%;
+		float: left;
+		text-align: left;
+		img {
+			display: inline;
+			margin: 1px;
+			border: @transperant-border; border-radius: @border-radius;
+			width: 130px;
+			height: 95px;
+			max-width: 800px;
+		}
+		a {
+			cursor:pointer;
+		}
+		a:hover img {
+			border: @bold-border;
+		}
+		a:hover div.img {
+			border: @bold-border;
+		}
+	}
+	.img:active {
+		border:@bold-border;
+		border-style: dotted;
+	}
+	div.desc {
+		width: 96%;
+		margin: 2px;
+		padding-right: 3px;
+		text-align: center;
+		font-weight: normal;
+		font-size: 12px;
+		font-family: @main-fonts ;
+	}   
+	div.iframe {
+		border:@bold-border; border-radius: @border-radius;
+		margin-left: 40px; margin-top: 1px;
+	}	
+}

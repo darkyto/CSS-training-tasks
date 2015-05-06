@@ -1,0 +1,89 @@
+body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, input, textarea, blockquote {
+  margin: 0; padding: 0; border: 0;
+  }
+a{cursor:pointer;}
+.image-gallery{
+  position:absolute; top: 10%; left: 15%;
+  margin:0 auto;
+  width:660px;  
+  font-family: Consolas, "Luicida Console" , sans-serif;
+  .big-image{
+    width:660px;
+    height:360px;   
+    margin:0 auto;  
+    position:relative;
+    img{
+      opacity:0;
+      position:absolute; left:0px; top:0px; 
+      width:660px;
+      height: 480px;
+      margin:00 auto;
+      transition: opacity 850ms;
+      box-shadow:0 1px 20px 1px rgba(0,0,0,0.7);
+    }
+  }
+}
+.image-gallery .big-image img:target{opacity:1;}
+.image-gallery .big-image img:target ~ img#default{opacity:0;}
+.image-gallery .big-image img#default{opacity:1;}
+.image-gallery .button{
+  font-weight:bold;
+  font-size:36px;
+  display:inline-table;
+  transform:scale(1,1.5);
+  background-color:#ccc;
+  color:#666;
+  padding:0px 5px;   
+  box-shadow:0 1px 20px 1px gray;
+}
+.image-gallery .prev{position:absolute; left:0; top:412px;}
+.image-gallery .next{position:absolute; right:0; top:412px;}
+.image-gallery .prev:active ~ .thumbs  ul{
+  transform:translateX(+20%);
+  transition:3s all;
+}
+.image-gallery  .next:active ~ .thumbs  ul{
+  transform:translateX(-60%);
+  transition:3s all;  
+}  
+.image-gallery .thumbs{
+  overflow:hidden; 
+  white-space:nowrap; 
+  margin:0 45px;
+  position: relative;
+  top:40px;
+  ul{float:left; transition:999999s all; transform:translateX(12%);}
+  li {
+    display:inline-block; margin-right:1px;
+    a:hover{opacity:1;}
+    a{opacity:0.75;}
+    a:focus{opacity:1;}
+    img{width:110px;}
+  }
+}
+#copyright {
+  font-family: Consolas, "Luicida Console", sans-serif;
+  font-weight: lighter; font-size: 0.6em;
+  position: relative; top: 530px; left:201px;z-index: 1;
+  text-align: right; text-decoration: lowercase;
+  width:660px;
+  height:18px;
+  background-color: #000;
+  color:#999;
+  border:3px solid gray;
+  box-shadow:0 1px 20px 1px gray;
+}
+#header {
+  font-family: Consolas, "Luicida Console", sans-serif;
+  font-weight: lighter; font-size: 0.6em;
+  position: relative; top: 60px; left:201px;z-index: 1;
+  text-align: center; text-decoration: lowercase;
+  width:660px;
+  height:18px;
+  background-color: #000;
+  color:#999;
+  border:3px solid gray;
+  box-shadow:0 1px 20px 1px gray;
+}
+
+
